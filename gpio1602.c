@@ -309,6 +309,12 @@ static void g1602_write(const char *s, int slen)
 				g1602_relocate(TRUE);
 				status = PARSE_NORMAL;
 				break;
+			case 'H':	//locate to x:y  *[x:yH
+				g1602_cur_x=codes[0];
+				g1602_cur_y=codes[1];
+				g1602_relocate(TRUE);
+				status = PARSE_NORMAL;
+				break;
 			default:
 				status = PARSE_NORMAL;
 			}
